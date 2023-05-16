@@ -39,5 +39,6 @@ Default is 'occ'.
 The argument '-exn' can be used to exclude additonal strings from the 'name_single.csv' file. When single names are extracted from the metadata files very generic patterns must be used (e.g. one capital letter, followed by at least 2 small letters). This leads to a high false positive rate. As the same false positives appear multiple times, the specification of some false positive strings can reduce the false positive rate dramatically. As a starting point the following strings are excluded by default:  
 ```Status|Error|Event|Single|Direct|Time|Sent|Update|Obaque|Record|Paused|Dialog|Select|Offset|Sender|Parent|Height|Hverified|Lverified|Connec```
 
+Note that post specifying new excluding names after a first inspection will harm the integrity of the test data and, strictly speaking, the new false positive rate cannot be seen as true false positive rate. Nonetheless, for a forensic examiner this post specification will come in handy as it reduces names to look out to drastically.
 
 The script does not claim to extract all possible metadata, but can be seen as good starting point with a majority of interesting insights.
