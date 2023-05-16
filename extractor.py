@@ -37,7 +37,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Argument Parser for Extractor')
 
     # Add the command-line arguments
-    parser.add_argument('-c', dest='metadata_filepath', help='metadata file path')
+    parser.add_argument('-p', dest='metadata_filepath', help='metadata file path')
     parser.add_argument('-s', dest='col_to_sort', help='column to sort')
     parser.add_argument('-exn', dest='excluded_names', nargs='+', help='excluded names')
 
@@ -58,6 +58,19 @@ if __name__ == "__main__":
     # check if output folder exists, otherwise create
     if not os.path.isdir(out_dir):
         os.mkdir(out_dir)
+
+    # check if metadata path is specified, if delete old input file
+    if metadata_filepath:
+        # delete existing output_files
+        if not os.path.isdir(in_dir):
+                os.mkdir(in_dir)
+        else:
+            for f in os.listdir(in_dir):
+                if not f.endswith(".txt"):
+                    continue
+                os.remove(os.path.join(in_dir, f))
+        copy_files_to_working_directory(metadata_filepath, in_dir)
+
 
     no_names = r'Status|Error|Event|Single|Direct|Time|Sent|Update|Obaque|Record|Paused|Dialog|Select|Offset|Sender|Parent|Height|Hverified|Lverified|Connec'
     # Append the excluded_names to 'no_names'
