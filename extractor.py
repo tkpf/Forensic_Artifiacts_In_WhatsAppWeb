@@ -55,9 +55,15 @@ if __name__ == "__main__":
     ### Argument Parsing finished
     ### make directory, specify patterns
 
-    # check if output folder exists, otherwise create
+    # check if output and input folder exists, otherwise create
     if not os.path.isdir(out_dir):
         os.mkdir(out_dir)
+    else:
+        # delete old files otherwise files may not get overwritten
+        for f in os.listdir(out_dir):
+            os.remove(os.path.join(out_dir, f))
+    if not os.path.isdir(in_dir):
+        os.mkdir(in_dir)
 
     # check if metadata path is specified, if delete old input file
     if metadata_filepath:
@@ -72,7 +78,8 @@ if __name__ == "__main__":
         copy_files_to_working_directory(metadata_filepath, in_dir)
 
 
-    no_names = r'Status|Error|Event|Single|Direct|Time|Sent|Update|Obaque|Record|Paused|Dialog|Select|Offset|Sender|Parent|Height|Hverified|Lverified|Connec'
+    no_names = r'Status|Error|Event|Single|Direct|Time|Sent|Update|Obaque|Record|Paused|Dialog|Select|Offset|Sender|Parent|Height|Chat|.verified|Connec|.false|.true'
+
     # Append the excluded_names to 'no_names'
     if excluded_names:
         no_names = no_names + '|' + excluded_names
@@ -80,7 +87,7 @@ if __name__ == "__main__":
 
     patterns = {
         "name_double_plus" : r'[A-Z][a-z]{2,10}(\x20[A-Z][a-z]{2,10})+',
-        "name_single" : r'(?<=[\x01\x14])(?!' + no_names + r')[[A-Z][a-z]{3,10}',
+        "name_single" : r'(?<=[\x01\x14])(?!' + no_names + r')[A-Z][a-z]{3,10}',
         "number_simple" : r'[0-9]{9,15}', # decrease false positives further by making length dependent on country code e.g. russian numbers are short
         "number_and_name_linked" : r'\x02.{0,100}@(?:s\.whatsapp\.net|c\.us).{0,100}\x02'
     }

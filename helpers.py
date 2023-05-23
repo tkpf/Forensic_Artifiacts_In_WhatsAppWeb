@@ -45,7 +45,7 @@ def extract_patterns(input_file, output_file, pattern, replace00 = True):
                     except:
                         eof = True
 
-def extract_linked_number_and_names(input_file = out_dir + 'number_and_name_linked.csv', output_file = out_dir + 'number_and_contacts.csv', delete_input_file_afterwards = True, extract_non_linked_numbers = False):
+def extract_linked_number_and_names(input_file = out_dir + 'number_and_name_linked.csv', output_file = out_dir + 'number_and_contacts.csv', delete_input_file_afterwards = True, extract_non_linked_numbers = True):
     '''
     Function to extract information from pre-filtered file to link numbers and contact names.
 
