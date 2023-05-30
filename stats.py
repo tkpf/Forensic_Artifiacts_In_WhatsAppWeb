@@ -119,14 +119,20 @@ def main():
     count_country_occurrences(input_file, output_file)
     print(f"Country occurrences saved to {output_file}")
 
+
+
+
+NUMBERS_ENCLOSED_OCC_FILE = 'output/number_and_contacts_with_country_code_and_occurences_sorted_by_occ.csv'
+NUMBERS_NAIVE_OCC_FILE = 'output/number_simple_with_country_code_and_occurences_sorted_by_occ.csv'
+
+COUNTRY_CODE_NAIVE_OCC_FILE = 'output/number_simple_with_country_code_and_occurences_sorted_by_occ_country_occ.csv'
+COUNTRY_CODE_ENCLOSED_OCC_FILE = 'output/number_and_contacts_with_country_code_and_occurences_sorted_by_occ_country_occ.csv'
+
+
 if __name__ == '__main__':
     # main()
 
-    NUMBERS_ENCLOSED_OCC_FILE = 'output/number_and_contacts_with_country_code_and_occurences_sorted_by_occ.csv'
-    NUMBERS_NAIVE_OCC_FILE = 'output/number_simple_with_country_code_and_occurences_sorted_by_occ.csv'
 
-    COUNTRY_CODE_NAIVE_OCC_FILE = 'cached_output/number_simple_with_country_code_and_occurences_sorted_by_occ_country_occ.csv'
-    COUNTRY_CODE_ENCLOSED_OCC_FILE = 'cached_output/number_and_contacts_with_country_code_and_occurences_sorted_by_occ_country_occ.csv'
 
     #visualized_number_occurences(NUMBERS_NAIVE_OCC_FILE, instances_to_visualize=30, figsize=(10, 6))
     #visualized_number_occurences(NUMBERS_ENCLOSED_OCC_FILE, instances_to_visualize=30)

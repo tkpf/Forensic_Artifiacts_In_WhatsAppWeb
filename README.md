@@ -45,3 +45,6 @@ The argument '-exn' can be used to exclude additonal strings from the 'name_sing
 Note that post specifying new excluding names after a first inspection will harm the integrity of the test data and, strictly speaking, the new false positive rate cannot be seen as true false positive rate. Nonetheless, for a forensic examiner this post specification will come in handy as it reduces names to look out for drastically.
 
 The script does not claim to extract all possible metadata, but can be seen as good starting point with a majority of interesting insights.
+
+## Script stats.py
+stats.py evaluates and visualizes the extracted artifact data with respect to the number occurences and country code occurences. The script visualizes the results in bar plots.
