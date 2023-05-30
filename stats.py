@@ -139,9 +139,11 @@ if __name__ == '__main__':
 
 
     if bool_visualized_number_occurences:
+        print("Visualize number occurences. First naive numbers. Second numbers from enclosing sequence.")
         visualized_number_occurences(NUMBERS_NAIVE_OCC_FILE, instances_to_visualize=30, figsize=(10, 6))
         visualized_number_occurences(NUMBERS_ENCLOSED_OCC_FILE, instances_to_visualize=30)
     if bool_visualize_country_code:
+        print("Visualize country occurences without number duplicates. First naive numbers. Second numbers from enclosing sequence.")
         visualized_country_code_occurences(COUNTRY_CODE_NAIVE_OCC_FILE, instances_to_visualize = 10, figsize=(6,6))
         visualized_country_code_occurences(COUNTRY_CODE_ENCLOSED_OCC_FILE, instances_to_visualize= 10, figsize=(6,6))
 
