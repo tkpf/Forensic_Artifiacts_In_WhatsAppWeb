@@ -23,7 +23,7 @@ This will create the files:
 
 ## Arguments to adjust script behavior
 There are 3 arguments which can be provided:
-1. -p some/filepath/
+1. -p "some/filepath/"
 2. -s my_sort_col
 3. -exn NoName1 NoName2 
 
