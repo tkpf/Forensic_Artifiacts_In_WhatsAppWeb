@@ -141,7 +141,7 @@ if __name__ == '__main__':
     if bool_visualized_number_occurences:
         visualized_number_occurences(NUMBERS_NAIVE_OCC_FILE, instances_to_visualize=30, figsize=(10, 6))
         visualized_number_occurences(NUMBERS_ENCLOSED_OCC_FILE, instances_to_visualize=30)
-    if bool_visualize_country_code
+    if bool_visualize_country_code:
         visualized_country_code_occurences(COUNTRY_CODE_NAIVE_OCC_FILE, instances_to_visualize = 10, figsize=(6,6))
         visualized_country_code_occurences(COUNTRY_CODE_ENCLOSED_OCC_FILE, instances_to_visualize= 10, figsize=(6,6))
 
