@@ -130,13 +130,18 @@ COUNTRY_CODE_ENCLOSED_OCC_FILE = 'output/number_and_contacts_with_country_code_a
 
 
 if __name__ == '__main__':
-    # main()
+
+    bool_visualize_country_code = True
+    bool_visualized_number_occurences= True
+
+    count_country_occurrences(NUMBERS_ENCLOSED_OCC_FILE, COUNTRY_CODE_ENCLOSED_OCC_FILE)
+    count_country_occurrences(NUMBERS_NAIVE_OCC_FILE, COUNTRY_CODE_NAIVE_OCC_FILE)
 
 
-
-    #visualized_number_occurences(NUMBERS_NAIVE_OCC_FILE, instances_to_visualize=30, figsize=(10, 6))
-    #visualized_number_occurences(NUMBERS_ENCLOSED_OCC_FILE, instances_to_visualize=30)
-
-    visualized_country_code_occurences(COUNTRY_CODE_NAIVE_OCC_FILE, instances_to_visualize = 10, figsize=(6,6))
-    visualized_country_code_occurences(COUNTRY_CODE_ENCLOSED_OCC_FILE, instances_to_visualize= 10, figsize=(6,6))
+    if bool_visualized_number_occurences:
+        visualized_number_occurences(NUMBERS_NAIVE_OCC_FILE, instances_to_visualize=30, figsize=(10, 6))
+        visualized_number_occurences(NUMBERS_ENCLOSED_OCC_FILE, instances_to_visualize=30)
+    if bool_visualize_country_code
+        visualized_country_code_occurences(COUNTRY_CODE_NAIVE_OCC_FILE, instances_to_visualize = 10, figsize=(6,6))
+        visualized_country_code_occurences(COUNTRY_CODE_ENCLOSED_OCC_FILE, instances_to_visualize= 10, figsize=(6,6))
 
